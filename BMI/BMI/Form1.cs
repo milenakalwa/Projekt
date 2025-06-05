@@ -10,11 +10,26 @@ using System.Windows.Forms;
 
 namespace BMI
 {
-    public partial class Form1: Form
+    public partial class button: Form
     {
-        public Form1()
+        public button()
         {
             InitializeComponent();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
