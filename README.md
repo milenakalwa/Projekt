@@ -16,4 +16,4 @@ Funkcje aplikacji:
 Technologie:
 - C#
 - Windows Forms(.NET)
--Visual Studio 2022 (współpraca za pomocą funkcji Live Share
+- Visual Studio 2022 (współpraca za pomocą funkcji Live Share
