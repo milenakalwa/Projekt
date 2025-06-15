@@ -1,5 +1,4 @@
-# Projekt
-Kalkulator BMI – Windows Forms App (C#)
+# Kalkulator BMI – Windows Forms App (C#)
 
 Opis aplikacji formatkowej – kalkulatora BMI:
 Projekt kalkulatora BMI stworzonego w technologii Windows Forms w języku C#. Aplikacja umożliwia obliczenie wskaźnika masy ciała (BMI), określenie kategorii wagowej na podstawie BMI, wyświetlanie panelu w kolorze odpowiednim do kategorii. Ponadto umożliwia porównanie obliczonego BMI z zalecanym zakresem dla wieku, wyświetlanie animacji balonów przy prawidłowym BMI, a także wyświetlanie linku do artykułów dot. walki z otyłością przy wysokim BMI.  Dane merytoryczne dot. BMI pochodzą z Wikipedii: https://pl.wikipedia.org/wiki/Wska%C5%BAnik_masy_cia%C5%82a
