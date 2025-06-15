@@ -41,7 +41,6 @@
             this.txtwiek = new System.Windows.Forms.TextBox();
             this.lblKomunikat = new System.Windows.Forms.Label();
             this.wyczyscbutton = new System.Windows.Forms.Button();
-            this.pokazbutton = new System.Windows.Forms.Button();
             this.panelWynik = new System.Windows.Forms.Panel();
             this.Sprawdzbutton = new System.Windows.Forms.Button();
             this.LinkLabelOtylosc = new System.Windows.Forms.LinkLabel();
@@ -162,24 +161,13 @@
             // wyczyscbutton
             // 
             this.wyczyscbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.wyczyscbutton.Location = new System.Drawing.Point(415, 350);
+            this.wyczyscbutton.Location = new System.Drawing.Point(271, 354);
             this.wyczyscbutton.Name = "wyczyscbutton";
             this.wyczyscbutton.Size = new System.Drawing.Size(232, 67);
             this.wyczyscbutton.TabIndex = 12;
             this.wyczyscbutton.Text = "Wyczyść formularz";
             this.wyczyscbutton.UseVisualStyleBackColor = true;
             this.wyczyscbutton.Click += new System.EventHandler(this.wyczyscbutton_Click);
-            // 
-            // pokazbutton
-            // 
-            this.pokazbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.pokazbutton.Location = new System.Drawing.Point(91, 350);
-            this.pokazbutton.Name = "pokazbutton";
-            this.pokazbutton.Size = new System.Drawing.Size(253, 67);
-            this.pokazbutton.TabIndex = 13;
-            this.pokazbutton.Text = "Pokaż 3 ostatnie wyniki BMI ";
-            this.pokazbutton.UseVisualStyleBackColor = true;
-            this.pokazbutton.Click += new System.EventHandler(this.pokazbutton_Click);
             // 
             // panelWynik
             // 
@@ -221,7 +209,6 @@
             this.Controls.Add(this.LinkLabelOtylosc);
             this.Controls.Add(this.Sprawdzbutton);
             this.Controls.Add(this.panelWynik);
-            this.Controls.Add(this.pokazbutton);
             this.Controls.Add(this.wyczyscbutton);
             this.Controls.Add(this.lblKomunikat);
             this.Controls.Add(this.txtwiek);
@@ -256,7 +243,6 @@
         private System.Windows.Forms.TextBox txtwiek;
         private System.Windows.Forms.Label lblKomunikat;
         private System.Windows.Forms.Button wyczyscbutton;
-        private System.Windows.Forms.Button pokazbutton;
         private System.Windows.Forms.Panel panelWynik;
         private System.Windows.Forms.Button Sprawdzbutton;
         private System.Windows.Forms.LinkLabel LinkLabelOtylosc;

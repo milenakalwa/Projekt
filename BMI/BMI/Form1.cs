@@ -13,11 +13,17 @@ namespace BMI
 {
     public partial class button : Form
     {
+        private List<PictureBox> balony = new List<PictureBox>();
+        private Timer timerBalonowy = new Timer();
+
         double ostatnieBMI = 0;
 
         public button()
         {
             InitializeComponent();
+
+            timerBalonowy.Interval = 50;
+            timerBalonowy.Tick += TimerBalonowy_Tick;
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -69,6 +75,8 @@ namespace BMI
                     lblKategoria.Text = "Waga prawidłowa";
                     panelWynik.BackColor = Color.Khaki;
                     LinkLabelOtylosc.Visible = false;
+
+                    PokazBalony();
                 }
                 else if (bmi < 29.99)
                 {
@@ -109,9 +117,9 @@ namespace BMI
             lblBMI.Text = "";
             lblKategoria.Text = " ";
             txtwiek.Clear();
-            LinkLabelOtylosc.Visible = false; // schowaj linka do strony o otyłości
+            LinkLabelOtylosc.Visible = false; // chowa linka do strony o walce z otyłością
             lblKomunikat.Text = "";//znika komunikat
-            panelWynik.BackColor = SystemColors.Control; //domyślny kolor 
+            panelWynik.BackColor = SystemColors.Control; //domyślny kolor wraca
 
         }
 
@@ -154,55 +162,43 @@ namespace BMI
                     break;
                 }
             }
-
-
         }
 
-        private void pokazbutton_Click(object sender, EventArgs e)
+
+       private void PokazBalony()
         {
-               public partial class Form1 : Form
-        {
-            private List<double> ostatnieWynikiBMI = new List<double>();
-
-            public Form1()
+            var rnd = new Random();
+        for (int i = 0; i< 5; i++)
             {
-                InitializeComponent();
+                PictureBox balon = new PictureBox();
+                balon.Image = Properties.Resources.balon;
+                balon.SizeMode = PictureBoxSizeMode.StretchImage;
+                balon.Size = new Size(50, 70);
+                balon.Left = rnd.Next(0, this.ClientSize.Width - balon.Width);
+                balon.Top = this.ClientSize.Height;
+
+                this.Controls.Add(balon);
+                balony.Add(balon);
             }
-
-            private void obliczbutton_Click(object sender, EventArgs e)
+            timerBalonowy.Start();
+            }
+            private void TimerBalonowy_Tick(object sender, EventArgs e)
             {
-                // Przykład obliczenia BMI (musisz mieć własną logikę obliczania)
-                double bmi = ObliczBMI();
-
-                // Dodaj wynik do listy
-                ostatnieWynikiBMI.Add(bmi);
-
-                // Zachowaj tylko 3 ostatnie
-                if (ostatnieWynikiBMI.Count > 3)
+            for (int i = balony.Count - 1; i >= 0; i--)
+            {
+                balony[i].Top -= 5;
+                if (balony[i].Bottom < 0)
                 {
-                   ostatnieWynikiBMI.RemoveAt(0);
+                    this.Controls.Remove(balony[i]);
+                    balony.RemoveAt(i);
                 }
             }
-
-            private void pokazbutton_Click(object sender, EventArgs e)
+            if (balony.Count == 0)
             {
-                if (ostatnieWynikiBMI.Count == 0)
-                {
-                    MessageBox.Show("Brak obliczonych wyników BMI.");
-                    return;
-                }
-
-                string wyniki = "Ostatnie wyniki BMI:\n";
-                foreach (double wynik in ostatnieWynikiBMI)
-                {
-                    wyniki += $"- {Math.Round(wynik, 2)}\n";
-                }
-
-                MessageBox.Show(wyniki);
+                timerBalonowy.Stop();
             }
         }
-          
-        
+
 
         private void LinkLabelOtylosc_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
